@@ -1,6 +1,6 @@
 ﻿#Definicion de Variables
 
-#$NetworkPath = \\ivandrago\Software\FontsLotba\Gotham 
+#$NetworkPath = \\FolderShare\
 
 #Se define la variable $LocalPath1 la cual es una ubicacion local oculta en el perfil publico que por defecto el usuario no ve.
 $LocalPath1 = "C:\FontsToDeploy\Fonts\*.*"
