@@ -1,9 +1,9 @@
-﻿#Definicion de Variables
-
-#$NetworkPath = \\FolderShare
+﻿
+#Instalacion de Fuentes 
+#$NetworkPath = \\FolderShare    en caso de ser una  ubicacion de red.
 
 #Se define la variable $LocalPath1 la cual es una ubicacion local oculta en el perfil publico que por defecto el usuario no ve.
-$LocalPath1 = "C:\FontsToDeploy\Fonts\*.*"
+#$LocalPath1 = "C:\FontsToDeploy\Fonts\*.*"
 
 #Se define la variable LocalPath (lugar temporal para guardar fuentes)
 $LocalPath = "C:\Users\Public\Fonts\"
@@ -17,7 +17,7 @@ New-Item $LocalPath -type directory -Force
 Copy-Item -Path "C:\FontsToDeploy\Fonts\*.*" -Destination "C:\Users\Public\Fonts\" -Force
 
 #Ejcuta dir sobre la variable $LocalPath y guarda el resultado en la variable $Fontdir
-$Fontdir = dir $LocalPath
+$Fontdir = Get-ChildItem $LocalPath
 
 
 #Notas-`New-Object` provides the most commonly-used functionality of the VBScript CreateObject function. 
