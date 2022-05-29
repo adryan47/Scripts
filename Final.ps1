@@ -20,7 +20,7 @@ Copy-Item -Path "C:\FontsToDeploy\Fonts\*.*" -Destination "C:\Users\Public\Fonts
 $Fontdir = Get-ChildItem $LocalPath
 
 
-#Notas-`New-Object` provides the most commonly-used functionality of the VBScript CreateObject function. 
+#Notas de lo que dice Google-`New-Object` provides the most commonly-used functionality of the VBScript CreateObject function. 
 #A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be   translated 
 #to `$objShell = New-Object -COMObject "Shell.Application"` in PowerShell. 
 
@@ -30,20 +30,18 @@ $shell = New-Object -ComObject "WScript.shell"
 
 $objFolder = $objShell.Namespace($FONTS)
 
-
-
 foreach($FONTS in $Fontdir) 
 {
-  if (!(Test-Path "C:\Windows\Fonts\$FONTS") -eq $False)
+if (!(Test-Path "C:\Windows\Fonts\$FONTS") -eq $False)
 
-    {
+ {
      if(($FONTS.name -match "Gotham*.ttf") -or ($FONTS.name -match "Gotham*.otf"))
      {
             
-         $objFolder.CopyHere($FONTS.fullname)
+      $objFolder.CopyHere($FONTS.fullname)
         
             $shell.Namespace($LocalPath).Items().InvokeVerbEx("Install")
          #$File.InvokeVerb("Install")
-    }
-}
+     }
+ }
 }
