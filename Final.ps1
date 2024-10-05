@@ -16,11 +16,11 @@ New-Item $LocalPath -type directory -Force
 #Copia el contenido de la primer carpeta en la segunda
 Copy-Item -Path "C:\FontsToDeploy\Fonts\*.*" -Destination "C:\Users\Public\Fonts\" -Force
 
-#Ejcuta dir sobre la variable $LocalPath y guarda el resultado en la variable $Fontdir
+#Ejecuta dir sobre la variable $LocalPath y guarda el resultado en la variable $Fontdir
 $Fontdir = Get-ChildItem $LocalPath
 
 
-#Notas de lo que dice Google-`New-Object` provides the most commonly-used functionality of the VBScript CreateObject function. 
+#Note-`New-Object` provides the most commonly-used functionality of the VBScript CreateObject function. 
 #A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be   translated 
 #to `$objShell = New-Object -COMObject "Shell.Application"` in PowerShell. 
 
